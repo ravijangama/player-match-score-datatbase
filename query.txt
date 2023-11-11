@@ -1,0 +1,15 @@
+//API 6
+const  playerMatchQuery = `
+       SELECT 
+          *
+       FROM 
+         player_details
+       WHERE 
+          player_id IN (
+              SELECT 
+                 player_id
+              FROM
+                 player_match_score
+              WHERE 
+                 match_id=${matchId}
+          );`;
